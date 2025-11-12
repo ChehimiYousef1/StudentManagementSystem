@@ -1,0 +1,129 @@
+﻿<Page x:Class="StudentManagementSystem_WPF.DeleteStudentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:StudentManagementSystem_WPF"
+      Title="Delete Student">
+
+    <Page.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Page.Resources>
+
+    <!-- Use a Viewbox to scale the whole content dynamically -->
+    <Viewbox Stretch="Uniform" StretchDirection="Both">
+        <Grid Width="500" Height="550" Background="#F9F9F9" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Page Title -->
+            <TextBlock Text="Delete Student"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,20,0,25"
+                       TextWrapping="Wrap"/>
+
+            <!-- Form Container -->
+            <Border Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    Width="Auto"
+                    MaxWidth="450"
+                    Background="White"
+                    Padding="25"
+                    CornerRadius="12"
+                    BorderBrush="#CCC"
+                    BorderThickness="1"
+                    SnapsToDevicePixels="True">
+                <StackPanel VerticalAlignment="Top">
+
+                    <TextBlock Text="Enter Student Details to Delete"
+                               FontSize="20"
+                               FontWeight="SemiBold"
+                               HorizontalAlignment="Center"
+                               Margin="0,0,0,20"
+                               TextWrapping="Wrap"/>
+
+                    <!-- Student ID -->
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="Student ID"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Margin="0,0,0,5"/>
+                        <Grid Height="40">
+                            <TextBox x:Name="IdBox" FontSize="14" Padding="5"/>
+                            <TextBlock Text="Enter Student ID"
+                                       Foreground="Gray"
+                                       Margin="8,0,0,0"
+                                       VerticalAlignment="Center"
+                                       IsHitTestVisible="False"
+                                       FontStyle="Italic"
+                                       Visibility="{Binding Text.Length, ElementName=IdBox, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <!-- First Name -->
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="First Name"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Margin="0,0,0,5"/>
+                        <Grid Height="40">
+                            <TextBox x:Name="FirstNameBox" FontSize="14" Padding="5"/>
+                            <TextBlock Text="Enter First Name"
+                                       Foreground="Gray"
+                                       Margin="8,0,0,0"
+                                       VerticalAlignment="Center"
+                                       IsHitTestVisible="False"
+                                       FontStyle="Italic"
+                                       Visibility="{Binding Text.Length, ElementName=FirstNameBox, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <!-- Last Name -->
+                    <StackPanel Margin="0,0,0,25">
+                        <TextBlock Text="Last Name"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Margin="0,0,0,5"/>
+                        <Grid Height="40">
+                            <TextBox x:Name="LastNameBox" FontSize="14" Padding="5"/>
+                            <TextBlock Text="Enter Last Name"
+                                       Foreground="Gray"
+                                       Margin="8,0,0,0"
+                                       VerticalAlignment="Center"
+                                       IsHitTestVisible="False"
+                                       FontStyle="Italic"
+                                       Visibility="{Binding Text.Length, ElementName=LastNameBox, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <!-- Delete Button -->
+                    <Button Content="Delete Student"
+                            Height="45"
+                            Margin="0,10,0,0"
+                            Background="#F44336"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            FontSize="16"
+                            Cursor="Hand"
+                            Click="DeleteStudent_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Result / Prompt Text -->
+            <TextBlock x:Name="ResultText"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   FontSize="26"
+                   Foreground="DarkRed"
+                   FontWeight="SemiBold"
+                   Margin="0,20,0,0"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"/>
+
+
+        </Grid>
+    </Viewbox>
+</Page>
