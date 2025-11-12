@@ -1,14 +1,14 @@
-# Visual Studio
+# Ignore Visual Studio temp files
 .vs/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Build output
+# Ignore build outputs
 bin/
 obj/
 
-# NuGet packages
+# Ignore NuGet packages
 *.nupkg
 packages/
