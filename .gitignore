@@ -1,24 +1,14 @@
-# Visual Studio
+# Visual Studio temporary files
 .vs/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-# Build results
+# Build output
 bin/
 obj/
-
-# Rider IDE
-.idea/
-
-# Windows files
-Thumbs.db
-Desktop.ini
 
 # NuGet packages
 *.nupkg
 packages/
-
-# Others
-*.log
